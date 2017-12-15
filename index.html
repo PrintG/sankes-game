@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="print">
+		<meta name="Keywords" content="标题">
+		<meta name="Description" content="描述">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"> -->  <!-- 手机端 -->
+		<link rel="stylesheet" type="text/css" href="font/font.css">
+		<link rel="stylesheet" href="css/reset.css">  <!-- 样式初始化 -->
+		<link rel="stylesheet" href="css/index.css">  <!-- 当前页面css -->
+		<!--[if lt IE 10]>
+			<script src="js/html5shiv.js"></script>
+			<div style="position:relative;z-index:99;width:100%;height:50px;background:#ffffe9;color:#1e5494;border-bottom:1px solid #e6e6c6;text-align:center;line-height:50px;font-size:12px;">您使用的浏览器版本过低，可能会影响到您浏览本网页，建议您升级您的浏览器。</div>
+		<![endif]-->
+		<title>贪吃蛇小游戏</title>
+	</head>
+	<body>
+		<!-- main start-->
+		<section id="main">
+			<!-- game-init-view -->
+			<section class="game-init-view">
+				<h2 class="title">贪吃蛇小游戏</h2>
+				<ul class="menu noSelectText">
+					<li class="start">开始游戏</li>
+					<li class="rankings">排行榜</li>
+					<li class="oper">操作说明</li>
+					<li class="author">关于作者</li>
+				</ul>
+			</section>
+			<!-- game-rankings -->
+			<section class="game-list-wrap hide p-trans">
+				<h2 class="title">贪吃排行榜 <span>(仅显示10条记录)</span> </h2>
+				<table class="game-rankings">
+					<thead>
+						<tr>
+							<td>排名</td>
+							<td>昵称</td>
+							<td>成绩</td>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr>
+							<td>1</td>
+							<td>test<td>
+							<td>265485</td>
+						</tr> -->
+					</tbody>
+				</table>
+				<div class="confirm-btn">确定</div>
+			</section>
+			<!-- game-view -->
+			<section class="game-view">
+				<canvas id="game-interface" width="600" height="600">您的浏览器版本较低，无法正常体验游戏，请更换或升级浏览器</canvas>
+				<!-- score -->
+				<div class="score-wrap">得分：<span class="score">0</span>分</div>
+			</section>
+			<!-- game-end-view -->
+			<section class="game-end">
+				<h2>游戏结束！</h2>
+				<p>你的成绩是：<span class="grade">0</span>分！ <span class="comments">你这是...在挂机吧</span> </p>
+				<section class="getUserName">
+					<p>你创造了新记录！</p>请留下你的大名：<input type="text" name="user" class="p-trans">
+				</section>
+				<button class="submit">确认</button>
+			</section>
+			<!-- game-oper -->
+			<section class="game-prop-view game-oper p-trans hide">
+				<h2 class="title">操作说明</h2>
+				<br>
+				<div class="text">
+					<p>注意：本游戏为PC端游戏，仅能使用电脑操作。</p>
+					<p>操作说明：</p>
+					<p class="second">- 使用 W A S D 键分别控制 上 左 下 右</p>
+					<p class="second">- 或者 ↑ ← ↓ → 键分别控制 上 左 下 右</p>
+					<p class="second">- 不能反向移动</p>
+					<p>游戏说明：</p>
+					<p class="second">- 吃到一个食物(球状)，可获得10分，并增长。如果超过或打平排行榜中的玩家分数，即可在排行榜中写入自己的名字。</p>
+					<p class="second">- 排行榜一共10个名额，取前十分数最高的玩家，可打破排行榜记录顶别人下去。</p>
+					<p class="second">- 排行榜仅限记录该电脑的玩家分数，并且是同一浏览器(不同浏览器会不同记录)</p>
+				</div>
+				<br><br>
+				<div class="confirm-btn">我知道了</div>
+			</section>
+			<!-- game-author -->
+			<section class="game-prop-view game-author p-trans hide">
+				<h2 class="title">关于作者</h2>
+				<br>
+				<div class="text">
+					<p>作者寄语：</p>
+					<p class="second">- 本游戏是使用Web前端技术完成的,使用了H5的localStorage本地存储对象(IE的话需要放到服务器上才能正常运行)</p>
+					<p class="second">- 该游戏的素材(包含音乐,图片等),都是从网上下载途径得到的，如有侵权，请联系作者。</p>
+					<p class="second">- 本游戏是模仿游戏 "贪吃蛇" 制成的，美化并增加了分数系统，随机皮肤系统</p>
+					<p class="second">- 如果想转载该游戏到其他平台，请联系作者，否则请勿私自转载</p>
+					<p>作者信息：</p>
+					<p class="second">- QQ: 2662256509</p>
+					<p class="second">- email: 2662256509@qq.com</p>
+					<p class="second">- lastTime: 2017-12-15-19:56</p>
+					<p class="second">- version: 1.0.0</p>
+				</div>
+				<br><br>
+				<div class="confirm-btn">我知道了</div>
+			</section>
+		</section>
+		<!-- main end -->
+
+		<!-- prop -->
+		<div class="prop">提示内容</div>
+
+		<!-- BGM -->
+		<audio src="source/bg.mp3" autoplay loop></audio>
+		<!-- 预加载音乐 -->
+		<audio src="source/eat_foot.mp3" preload="auto"></audio>
+		<audio src="source/die.mp3" preload="auto"></audio>
+
+		<script src="js/lib/jquery.3.2.1.min.js"></script>
+		<script src="js/lib/json2.js"></script>
+		<script src="js/lib/snakes-storage.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

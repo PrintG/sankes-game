@@ -1,0 +1,8 @@
+@charset 'utf-8';
+
+@font-face{
+    font-family: "gamefont";
+    src : url("./ddyt.ttf");
+    font-weight:normal;
+    font-style:normal;
+}

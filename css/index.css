@@ -1,0 +1,224 @@
+@charset 'utf-8';
+
+html,body{
+	height: 100%;
+}
+body{
+	position: relative;
+	overflow: hidden;
+	background: url('../img/bg.png') no-repeat center/cover;
+}
+/*-------------------------- 
+	      main start
+--------------------------*/
+#main{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 600px;
+	height: 600px;
+	margin: auto;
+	border: 2px solid rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.8);
+	-webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.2);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+/*-------------------------- game-init-view --------------------------*/
+#main .game-init-view{
+	position: absolute;
+	width: 100%;
+	padding-top: 50px;
+}
+#main .game-init-view .title{
+	margin-bottom: 80px;
+	font-size: 34px;
+}
+#main .game-init-view .menu{
+	width: 200px;
+	margin: auto;
+	font-size: 20px;
+	border: 1px solid #aaa;
+	background-color: rgba(255,255,255,0.5);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#main .game-init-view .menu li{
+	color: #999;
+	line-height: 35px;
+	cursor: pointer;
+}
+#main .game-init-view .menu li+li{
+	border-top: 1px solid #aaa;
+}
+#main .game-init-view .menu li:active{
+	color: #000;
+}
+/*-------------------------- game-rankings --------------------------*/
+#main .game-list-wrap{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: -2px 0 0 -2px;
+	border: 2px solid #f1c444;
+	background-image: url('../img/list-bg.png');
+	-webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,0.5) inset;
+	-moz-box-shadow: 0 0 5px 1px rgba(0,0,0,0.5) inset;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.5) inset;
+	overflow-y: auto;
+	-webkit-transform: scale(1) rotateZ(360deg);
+	-moz-transform: scale(1) rotateZ(360deg);
+	transform: scale(1) rotateZ(360deg);
+}
+#main .game-list-wrap.hide{
+	-webkit-transform: scale(0) rotateZ(0deg);
+	-moz-transform: scale(0) rotateZ(0deg);
+	transform: scale(0) rotateZ(0deg);
+}
+#main .game-list-wrap .title{
+	color: #fff;
+}
+#main .game-list-wrap .title span{
+	font-size: 16px;
+}
+#main .game-list-wrap .game-rankings{
+	width: 535px;
+	margin: 30px auto;
+	font-size: 20px;
+}
+#main .game-list-wrap .game-rankings thead{
+	background-color: #a8afe6;
+}
+#main .game-list-wrap .game-rankings tr td+td{
+	border-left: 1px solid #6594c8;
+}
+#main .game-list-wrap .game-rankings tbody tr:nth-child(2n-1){
+	background-color: #d7dff2;
+}
+#main .game-list-wrap .game-rankings tbody tr:nth-child(2n){
+	background-color: #9cb4d8;
+}
+#main .game-list-wrap .game-rankings tbody tr:hover{
+	opacity: 0.85;
+}
+#main .game-list-wrap .game-rankings tr td{
+	padding: 5px 0;
+}
+/*-------------------------- game-view --------------------------*/
+#main .game-view{
+	display: none;
+}
+#main .game-view .score-wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	color: blue;
+	font-size: 18px;
+}
+/*-------------------------- game-end --------------------------*/
+#main .game-end{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#main .game-end p{
+	padding: 15px 0;
+}
+#main .game-end p .grade{
+	color: blue;
+}
+#main .game-end p .comments{
+	color: red;
+}
+#main .game-end .getUserName{
+	color: #ff9800;
+	font-size: 18px;
+}
+#main .game-end .getUserName p{
+	color: blue;
+}
+#main .game-end .getUserName input{
+	width: 200px;
+	border-bottom: 2px solid #b7edc7;
+	background-color: transparent;
+	color: #ff9800;
+	text-align: left;
+	text-indent: 0.5em;
+}
+#main .game-end .getUserName input:focus{
+	border-color: #0682ba;
+}
+#main .game-end .getUserName.hide{
+	display: none;
+}
+#main .game-end .submit{
+	width: 200px;
+	height: 40px;
+	margin: 30px 0 0;
+	background-color: #009fdb;
+	color: #fff;
+	font-size: 24px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-box-shadow: 0px 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 0px 1px 1px #ccc;
+	box-shadow: 0px 0px 1px 1px #ccc;
+}
+#main .game-end .submit:hover{
+	opacity: 0.9;
+}
+#main .game-end .submit:active{
+	opacity: 0.8;
+}
+/*-------------------------- game-oper --------------------------*/
+#main .game-oper,
+#main .game-author{
+	color: #fff;
+}
+#main .game-oper .text,
+#main .game-author .text{
+	padding: 0 50px;
+}
+#main .game-oper .text p,
+#main .game-author .text p{
+	padding: 5px 0;
+	text-align: left;
+}
+#main .game-oper .text p.second,
+#main .game-author .text p.second{
+	text-indent: 2em;
+}
+/*-------------------------- 
+	      main end
+--------------------------*/
+
+/*-------------------------- 
+	      prop
+--------------------------*/
+.prop{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 500px;
+	height: 300px;
+	height: max-content;
+	border: 1px solid #000;
+	padding: 10px 5px;
+	margin: auto;
+	background-color: rgba(0,0,0,0.6);
+	color: #fff;
+}
